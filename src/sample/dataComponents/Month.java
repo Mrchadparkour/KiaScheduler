@@ -1,4 +1,4 @@
-package sample;
+package sample.dataComponents;
 
 public class VisibleWeekControl {
     private Week[] weeks = new Week[4];
