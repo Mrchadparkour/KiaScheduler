@@ -11,29 +11,29 @@ import java.util.concurrent.*;
 
 public class WeekView extends UIComponent {
 
-    private static AnchorPane visibleWeek = new AnchorPane();
+    private static AnchorPane visibleWeek;
     private static Month vw = new Month();
     private static boolean eventPlaying = false;
     private static ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
 
-    private static Runnable task = () -> {
-        eventPlaying = false;
-    };
-
     public WeekView(Scene scene, Parent parent) {
         super(scene, parent);
     }
-    @Override
-    public void initView() {
-        //Add this component to the scene
-        ((AnchorPane)(parent)).getChildren().addAll(visibleWeek);
 
+    private void drawVisibleWeek(double y) {
         double margin = scene.getWidth() / 20;
+        visibleWeek = new AnchorPane();
         visibleWeek.setLayoutX(scene.getWidth() / 4 + margin);
-        visibleWeek.setLayoutY(margin);
+        visibleWeek.setLayoutY(y);
         visibleWeek.setPrefHeight(scene.getHeight() - (margin * 2));
         visibleWeek.setPrefWidth(scene.getWidth() - (scene.getWidth() / 4 + (margin * 2)));
         visibleWeek.setStyle("-fx-background-color: " + vw.getCurrWeek().getColor());
+    }
+
+    @Override
+    public void initView() {
+        drawVisibleWeek(scene.getWidth() / 20);
+        ((AnchorPane)(parent)).getChildren().addAll(visibleWeek);
 
         //Scroll to change change week view
         parent.setOnScroll(event -> {
@@ -42,7 +42,7 @@ public class WeekView extends UIComponent {
                 if (dir != 0){
                     eventPlaying = true;
                     animateWeekChange(dir);
-                    s.schedule(task, 1, TimeUnit.SECONDS);
+                    s.schedule((Runnable)(() -> eventPlaying = false), 1, TimeUnit.SECONDS);
                 }
             }
         });
@@ -53,33 +53,28 @@ public class WeekView extends UIComponent {
 
         AnchorPane temp = (AnchorPane) super.clone(visibleWeek);
         temp.setLayoutY(margin);
+        temp.setStyle("-fx-background-color: " + vw.getCurrWeek().getColor());
 
         TranslateTransition t = new TranslateTransition(Duration.seconds(1), temp);
         FadeTransition f = new FadeTransition(Duration.seconds(1), temp);
 
-        f.setToValue(0.2);
+        f.setToValue(0.0);
         t.setToY(-1 * dir * (scene.getHeight() - margin));
         t.play();
-        f.play();
+//        f.play();
 
         ((AnchorPane)(parent)).getChildren().addAll(temp);
         ((AnchorPane)(parent)).getChildren().removeAll(visibleWeek);
-
-        visibleWeek = new AnchorPane();
+        drawVisibleWeek(dir * scene.getHeight());
         ((AnchorPane)(parent)).getChildren().addAll(visibleWeek);
-        visibleWeek.setLayoutX(scene.getWidth() / 4 + margin);
-        visibleWeek.setLayoutY( dir * scene.getHeight() );
-        visibleWeek.setPrefHeight(scene.getHeight() - (margin * 2));
-        visibleWeek.setPrefWidth(scene.getWidth() - (scene.getWidth() / 4 + (margin * 2)));
-        visibleWeek.setStyle("-fx-background-color: " + vw.getCurrWeek().getColor());
 
         TranslateTransition t2 = new TranslateTransition(Duration.seconds(1), visibleWeek);
         FadeTransition f2 = new FadeTransition(Duration.seconds(1), visibleWeek);
         t2.setToY( -1 * dir * (scene.getHeight() - (margin * dir)) );
-        f2.setFromValue(0.2);
+        f2.setFromValue(0.0);
         f2.setToValue(1.0);
 
-        f2.play();
+//        f2.play();
         t2.play();
     }
 }

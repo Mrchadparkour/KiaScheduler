@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import sample.uiComponents.Backdrop;
 import sample.uiComponents.Dashboard;
 import sample.uiComponents.WeekView;
 
@@ -13,6 +14,7 @@ public class Main extends Application {
     private static Scene scene = new Scene(outerAp, 1600, 900);
     private static Dashboard dash = new Dashboard(scene, outerAp);
     private static WeekView wv = new WeekView(scene, outerAp);
+    private static Backdrop bd = new Backdrop(scene, outerAp);
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -42,7 +44,8 @@ public class Main extends Application {
         //initialize components
         dash.initView();
         wv.initView();
-
+//        bd.initView();
+        outerAp.setId("backdrop");
 
         primaryStage.show();
     }
