@@ -19,12 +19,19 @@ public class Main extends Application {
 
         //Handle window resize
         primaryStage.widthProperty().addListener((obs, oldVal, newVal) -> {
+            double margin = scene.getWidth() / 20;
             double newDashEnd = scene.getWidth() /4;
             AnchorPane dashNode = dash.getDashboard();
             outerAp.setMaxHeight(scene.getHeight());
             outerAp.setPrefHeight(scene.getHeight());
             dashNode.setMaxWidth(newDashEnd);
             dashNode.setPrefWidth(newDashEnd);
+            outerAp.getChildren().forEach(node -> {
+                node.setLayoutX(scene.getWidth() / 4 + margin);
+                node.setLayoutY(margin);
+                ((AnchorPane)(node)).setPrefHeight(scene.getHeight() - (margin * 2));
+                ((AnchorPane)(node)).setPrefWidth(scene.getWidth() - (scene.getWidth() / 4 + (margin * 2)));
+            });
         });
 
         //load css

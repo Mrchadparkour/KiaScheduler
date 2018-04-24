@@ -7,12 +7,18 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 import sample.VisibleWeekControl;
+import java.util.concurrent.*;
 
 public class WeekView extends UIComponent {
 
     private static AnchorPane visibleWeek = new AnchorPane();
     private static VisibleWeekControl vw = new VisibleWeekControl();
     private static boolean eventPlaying = false;
+    private static ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
+
+    private static Runnable task = () -> {
+        eventPlaying = false;
+    };
 
     public WeekView(Scene scene, Parent parent) {
         super(scene, parent);
@@ -31,19 +37,25 @@ public class WeekView extends UIComponent {
 
         //Scroll to change change week view
         parent.setOnScroll(event -> {
-            animateWeekChange(vw.moveWeek((int)(event.getDeltaY())));
+            if (!eventPlaying) {
+                int dir = vw.moveWeek((int)(event.getDeltaY()));
+                if (dir != 0){
+                    eventPlaying = true;
+                    animateWeekChange(dir);
+                    s.schedule(task, 1, TimeUnit.SECONDS);
+                }
+            }
         });
     }
 
     private void animateWeekChange(int dir) {
-        if (dir == 0) return;
         double margin = scene.getWidth() / 20;
 
         AnchorPane temp = (AnchorPane) super.clone(visibleWeek);
         temp.setLayoutY(margin);
 
-        TranslateTransition t = new TranslateTransition(Duration.seconds(2), temp);
-        FadeTransition f = new FadeTransition(Duration.seconds(2), temp);
+        TranslateTransition t = new TranslateTransition(Duration.seconds(1), temp);
+        FadeTransition f = new FadeTransition(Duration.seconds(1), temp);
 
         f.setToValue(0.2);
         t.setToY(-1 * dir * (scene.getHeight() - margin));
@@ -61,8 +73,8 @@ public class WeekView extends UIComponent {
         visibleWeek.setPrefWidth(scene.getWidth() - (scene.getWidth() / 4 + (margin * 2)));
         visibleWeek.setStyle("-fx-background-color: " + vw.getCurrWeek().getColor());
 
-        TranslateTransition t2 = new TranslateTransition(Duration.seconds(2), visibleWeek);
-        FadeTransition f2 = new FadeTransition(Duration.seconds(2), visibleWeek);
+        TranslateTransition t2 = new TranslateTransition(Duration.seconds(1), visibleWeek);
+        FadeTransition f2 = new FadeTransition(Duration.seconds(1), visibleWeek);
         t2.setToY( -1 * dir * (scene.getHeight() - (margin * dir)) );
         f2.setFromValue(0.2);
         f2.setToValue(1.0);
