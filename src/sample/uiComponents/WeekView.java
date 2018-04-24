@@ -6,13 +6,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
-import sample.VisibleWeekControl;
+import sample.dataComponents.Month;
 import java.util.concurrent.*;
 
 public class WeekView extends UIComponent {
 
     private static AnchorPane visibleWeek = new AnchorPane();
-    private static VisibleWeekControl vw = new VisibleWeekControl();
+    private static Month vw = new Month();
     private static boolean eventPlaying = false;
     private static ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
 
