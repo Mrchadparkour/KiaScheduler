@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Tests/dataComponents/DayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KiaSchedule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/KiaSchedule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KiaSchedule/sample/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KiaSchedule/sample/Utils/StrUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KiaSchedule/sample/assets/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KiaSchedule/sample/assets/images/cherryBig.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KiaSchedule/sample/dataComponents/Appointment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KiaSchedule/sample/dataComponents/AppointmentHolder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KiaSchedule/sample/dataComponents/Backlog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KiaSchedule/sample/dataComponents/Day.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KiaSchedule/sample/dataComponents/Month.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KiaSchedule/sample/dataComponents/Week.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KiaSchedule/sample/uiComponents/Backdrop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KiaSchedule/sample/uiComponents/Dashboard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KiaSchedule/sample/uiComponents/UIComponent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KiaSchedule/sample/uiComponents/WeekView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/Utils/strUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/Utils/strUtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/dataComponents/MonthTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/dataComponents/MonthTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/dataComponents/WeekTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/dataComponents/WeekTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/estheics_byki/Utils/StrUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/estheics_byki/Utils/StrUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/estheics_byki/dataComponents/Month.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/estheics_byki/dataComponents/Month.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/estheics_byki/dataComponents/Week.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/estheics_byki/dataComponents/Week.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/estheics_byki/uiComponents/WeekView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/estheics_byki/uiComponents/WeekView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/dataComponents/DayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/dataComponents/DayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/estheics_byki/dataComponents/Day.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/estheics_byki/dataComponents/Day.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,62 +64,12 @@
       <file leaf-file-name="Day.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/estheics_byki/dataComponents/Day.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+            <state relative-caret-position="196">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strUtilsTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tests/Utils/strUtilsTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="72" lean-forward="true" selection-start-line="13" selection-start-column="72" selection-end-line="13" selection-end-column="72" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Dashboard.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/estheics_byki/uiComponents/Dashboard.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WeekView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/estheics_byki/uiComponents/WeekView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Week.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/estheics_byki/dataComponents/Week.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="25" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#351#352#0" expanded="true" />
-                <element signature="e#376#377#0" expanded="true" />
-                <element signature="e#865#866#0" expanded="true" />
-                <element signature="e#892#893#0" expanded="true" />
+                <element signature="e#408#409#0" expanded="true" />
+                <element signature="e#499#500#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -150,8 +78,13 @@
       <file leaf-file-name="DayTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Tests/dataComponents/DayTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+            <state relative-caret-position="216">
+              <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#311#312#0" expanded="true" />
+                <element signature="e#352#353#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,49 +92,8 @@
       <file leaf-file-name="WeekTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Tests/dataComponents/WeekTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
+            <state relative-caret-position="594">
               <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Month.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/estheics_byki/dataComponents/Month.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-49">
-              <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-              <folding>
-                <element signature="e#289#290#0" expanded="true" />
-                <element signature="e#316#317#0" expanded="true" />
-                <element signature="e#780#781#0" expanded="true" />
-                <element signature="e#817#818#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/estheics_byki/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="39" column="99" lean-forward="true" selection-start-line="39" selection-start-column="99" selection-end-line="39" selection-end-column="99" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1974#1975#0" expanded="true" />
-                <element signature="e#2002#2003#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MonthTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tests/dataComponents/MonthTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -269,6 +161,7 @@
         <option value="$PROJECT_DIR$/src/Tests/dataComponents/MonthTest.java" />
         <option value="$PROJECT_DIR$/src/Tests/dataComponents/WeekTest.java" />
         <option value="$PROJECT_DIR$/src/com/estheics_byki/dataComponents/Week.java" />
+        <option value="$PROJECT_DIR$/src/com/estheics_byki/dataComponents/Day.java" />
         <option value="$PROJECT_DIR$/src/Tests/dataComponents/DayTest.java" />
       </list>
     </option>
@@ -400,7 +293,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.WeekTest.checkWeekDayNames">
+  <component name="RunManager" selected="JUnit.DayTest.testFDate">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -420,6 +313,29 @@
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
+    <configuration name="DayTest.testFDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="KiaSchedule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dataComponents.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="dataComponents" />
+      <option name="MAIN_CLASS_NAME" value="dataComponents.DayTest" />
+      <option name="METHOD_NAME" value="testFDate" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <patterns />
+    </configuration>
     <configuration name="MonthTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="KiaSchedule" />
       <extension name="coverage">
@@ -434,29 +350,6 @@
       <option name="MAIN_CLASS_NAME" value="dataComponents.MonthTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="MonthTest.hasValidWeeks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="KiaSchedule" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dataComponents.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="dataComponents" />
-      <option name="MAIN_CLASS_NAME" value="dataComponents.MonthTest" />
-      <option name="METHOD_NAME" value="hasValidWeeks" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -601,19 +494,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.MonthTest.hasValidWeeks" />
       <item itemvalue="JUnit.MonthTest.testMoveWeek" />
       <item itemvalue="JUnit.WeekTest.itHasDays" />
       <item itemvalue="JUnit.MonthTest" />
       <item itemvalue="JUnit.WeekTest.checkWeekDayNames" />
+      <item itemvalue="JUnit.DayTest.testFDate" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DayTest.testFDate" />
         <item itemvalue="JUnit.WeekTest.checkWeekDayNames" />
         <item itemvalue="JUnit.WeekTest.itHasDays" />
         <item itemvalue="JUnit.MonthTest" />
         <item itemvalue="JUnit.MonthTest.testMoveWeek" />
-        <item itemvalue="JUnit.MonthTest.hasValidWeeks" />
       </list>
     </recent_temporary>
   </component>
@@ -1003,16 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/estheics_byki/uiComponents/Dashboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/estheics_byki/dataComponents/Month.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-49">
@@ -1065,30 +948,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests/dataComponents/WeekTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/estheics_byki/uiComponents/WeekView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/estheics_byki/dataComponents/Day.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1109,10 +972,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/estheics_byki/uiComponents/Dashboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tests/dataComponents/WeekTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/estheics_byki/dataComponents/Day.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tests/dataComponents/DayTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        <state relative-caret-position="216">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

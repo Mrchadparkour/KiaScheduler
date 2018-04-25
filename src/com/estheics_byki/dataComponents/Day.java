@@ -3,7 +3,8 @@ package com.estheics_byki.dataComponents;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import com.estheics_byki.Utils.StrUtils;
+
+import static com.estheics_byki.Utils.StrUtils.titleCase;
 
 public class Day implements AppointmentHolder{
     private LocalDateTime date;
@@ -11,6 +12,10 @@ public class Day implements AppointmentHolder{
 
     public Day(LocalDateTime date) {
         this.date = date;
+    }
+
+    public String fDate() {
+        return titleCase(date.getMonth() + " " + date.getDayOfMonth() + ", " + date.getYear());
     }
 
     @Override
@@ -30,6 +35,6 @@ public class Day implements AppointmentHolder{
     }
 
     public String getWeekDay() {
-        return StrUtils.titleCase(date.getDayOfWeek().toString());
+        return titleCase(date.getDayOfWeek().toString());
     }
 }
