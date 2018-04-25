@@ -27,7 +27,7 @@ public class WeekView extends UIComponent {
         visibleWeek.setLayoutY(y);
         visibleWeek.setPrefHeight(scene.getHeight() - (margin * 2));
         visibleWeek.setPrefWidth(scene.getWidth() - (scene.getWidth() / 4 + (margin * 2)));
-        visibleWeek.setStyle("-fx-background-color: " + vw.getCurrWeek().getColor());
+        visibleWeek.setStyle("-fx-background-color: #FFFFFF");
     }
 
     @Override
@@ -53,7 +53,7 @@ public class WeekView extends UIComponent {
 
         AnchorPane temp = (AnchorPane) super.clone(visibleWeek);
         temp.setLayoutY(margin);
-        temp.setStyle("-fx-background-color: " + vw.getCurrWeek().getColor());
+        temp.setStyle("-fx-background-color: #FFFFFF");
 
         TranslateTransition t = new TranslateTransition(Duration.seconds(1), temp);
         FadeTransition f = new FadeTransition(Duration.seconds(1), temp);
