@@ -10,6 +10,14 @@ public class WeekTest {
     private Week week = new Week();
 
     @Test
+    void testWeekName() {
+        System.out.println("It should look like April 23 - April 29");
+        System.out.println("It looks like: " + week.genName());
+        Assertions.assertEquals("April 23 - April 29", week.genName());
+        System.out.println("All clear.");
+    }
+
+    @Test
     void itHasDays() {
         System.out.println("This is checking that it both has days, and checking the genDays function");
         System.out.println("Checking if your week has days...");
@@ -32,6 +40,4 @@ public class WeekTest {
         }
         System.out.println("We do!");
     }
-
-
 }

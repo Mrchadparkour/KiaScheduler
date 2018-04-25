@@ -21,9 +21,15 @@ public class Week {
         for (int i=0;i<dayNames.length;i++) days[i] = new Day(pDate.minusDays(tIdx - i));
     }
 
-//    void calculateName() {
-//        return days[0].getFDate() + days[6].getFDate();
-//    }
+    void genDays(LocalDateTime ldt) {
+        String today = titleCase(ldt.getDayOfWeek().toString());
+        int tIdx = java.util.Arrays.asList(dayNames).indexOf(today);
+        for (int i=0;i<dayNames.length;i++) days[i] = new Day(ldt.minusDays(tIdx - i));
+    }
+
+    public String genName() {
+        return days[0].fDate() + " - " + days[6].fDate();
+    }
 
     public Day[] getDays() {
         return days;

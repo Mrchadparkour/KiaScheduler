@@ -11,9 +11,9 @@ public class DayTest {
 
     @Test
     void testFDate() {
-        System.out.println("Should look like: April 25, 2018");
+        System.out.println("Should look like: April 25");
         System.out.println("It looks like: " + day.fDate());
-        Assertions.assertEquals("April 25, 2018", day.fDate());
+        Assertions.assertEquals("April 25", day.fDate());
         System.out.println("All clear!");
     }
 

@@ -15,7 +15,7 @@ public class Day implements AppointmentHolder{
     }
 
     public String fDate() {
-        return titleCase(date.getMonth() + " " + date.getDayOfMonth() + ", " + date.getYear());
+        return titleCase(date.getMonth() + " " + date.getDayOfMonth());
     }
 
     @Override
