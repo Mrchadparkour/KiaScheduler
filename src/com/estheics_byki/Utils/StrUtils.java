@@ -1,4 +1,4 @@
-package sample.Utils;
+package com.estheics_byki.Utils;
 
 public class StrUtils {
     public final static String titleCase(String str) {

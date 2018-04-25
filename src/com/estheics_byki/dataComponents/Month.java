@@ -1,4 +1,4 @@
-package sample.dataComponents;
+package com.estheics_byki.dataComponents;
 
 public class Month {
     private Week[] weeks = new Week[4];

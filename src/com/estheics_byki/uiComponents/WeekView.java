@@ -1,4 +1,4 @@
-package sample.uiComponents;
+package com.estheics_byki.uiComponents;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
-import sample.dataComponents.Month;
+import com.estheics_byki.dataComponents.Month;
 import java.util.concurrent.*;
 
 public class WeekView extends UIComponent {

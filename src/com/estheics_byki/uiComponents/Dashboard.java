@@ -1,4 +1,4 @@
-package sample.uiComponents;
+package com.estheics_byki.uiComponents;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;

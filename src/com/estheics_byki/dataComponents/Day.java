@@ -1,10 +1,17 @@
-package sample.dataComponents;
+package com.estheics_byki.dataComponents;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import com.estheics_byki.Utils.StrUtils;
 
-public class Backlog implements AppointmentHolder {
-    List<Appointment> appointments = new ArrayList<>();
+public class Day implements AppointmentHolder{
+    private LocalDateTime date;
+    private List<Appointment> appointments = new ArrayList<>();
+
+    public Day(LocalDateTime date) {
+        this.date = date;
+    }
 
     @Override
     public boolean addAppointment(Appointment app) {
@@ -20,5 +27,9 @@ public class Backlog implements AppointmentHolder {
         }
         System.out.println("No such appointment exists.");
         return false;
+    }
+
+    public String getWeekDay() {
+        return StrUtils.titleCase(date.getDayOfWeek().toString());
     }
 }

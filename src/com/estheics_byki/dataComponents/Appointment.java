@@ -1,4 +1,4 @@
-package sample.dataComponents;
+package com.estheics_byki.dataComponents;
 
 import java.util.Date;
 
