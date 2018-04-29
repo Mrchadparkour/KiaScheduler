@@ -1,6 +1,7 @@
 package com.estheics_byki.dataComponents;
 
 import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,14 @@ public class Day implements AppointmentHolder{
 
     public Day(LocalDateTime date) {
         this.date = date;
+    }
+
+    public int getDayVal() {
+        return date.getDayOfMonth();
+    }
+
+    public Month getMonth() {
+        return date.getMonth();
     }
 
     public String fDate() {
