@@ -93,7 +93,8 @@ public class WeekView extends UIComponent {
     }
 
     private void showDays() {
-        for (int i=0; i < currWeek.getDays().size() - 1; i++) {
+        for (int i=0; i < currWeek.getDays().size(); i++) {
+            System.out.println(i);
             AnchorPane ap = new AnchorPane();
             AnchorPane.setLeftAnchor(ap, margin);
             AnchorPane.setRightAnchor(ap, margin);
