@@ -46,10 +46,14 @@ public class ThirtyDayTest {
         thirtyDay.moveWeek(-1);
         System.out.println("Move forward");
         thirtyDay.moveWeek(-1);
+        System.out.println("Move forward");
+        thirtyDay.moveWeek(-1);
         System.out.println("Checking for the out of bounds check...");
         Assertions.assertEquals(0, thirtyDay.moveWeek(-1));
         System.out.println("Can we move backward...");
         Assertions.assertEquals(-1, thirtyDay.moveWeek(1));
+        System.out.println("Move backward");
+        thirtyDay.moveWeek(1);
         System.out.println("Move backward");
         thirtyDay.moveWeek(1);
         System.out.println("Move backward");

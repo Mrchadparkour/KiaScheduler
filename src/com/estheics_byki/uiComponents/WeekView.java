@@ -17,28 +17,31 @@ public class WeekView extends UIComponent {
     private static AnchorPane visibleWeek;
     private static ThirtyDay thirtyDay = new ThirtyDay();
     private static boolean eventPlaying = false;
-    private static Week currWeek;
     private static ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
+    private double margin;
+    private Scene scene;
+    private Week currWeek;
 
     public WeekView(Scene scene, Parent parent) {
         super(scene, parent);
+        this.scene = scene;
         this.currWeek = thirtyDay.getCurrWeek();
+        this.margin = scene.getWidth() / 20;
     }
 
     private void drawVisibleWeek(double y) {
-        double margin = scene.getWidth() / 20;
         visibleWeek = new AnchorPane();
         visibleWeek.setLayoutX(scene.getWidth() / 4 + margin);
         visibleWeek.setLayoutY(y);
         visibleWeek.setPrefHeight(scene.getHeight() - (margin * 2));
         visibleWeek.setPrefWidth(scene.getWidth() - (scene.getWidth() / 4 + (margin * 2)));
-        visibleWeek.setStyle("-fx-background-color: #FFFFFF");
+        visibleWeek.setStyle("-fx-background-color: #FFF");
         showName();
+        showDays();
     }
 
     @Override
     public void initView() {
-
         //Scroll to change change week view
         parent.setOnScroll(event -> {
             if (!eventPlaying) {
@@ -57,11 +60,9 @@ public class WeekView extends UIComponent {
     }
 
     private void animateWeekChange(int dir) {
-        double margin = scene.getWidth() / 20;
-
         AnchorPane temp = (AnchorPane) super.clone(visibleWeek);
         temp.setLayoutY(margin);
-        temp.setStyle("-fx-background-color: #FFFFFF");
+        temp.setStyle("-fx-background-color: #FFF");
 
         TranslateTransition t = new TranslateTransition(Duration.seconds(1), temp);
 
@@ -70,6 +71,8 @@ public class WeekView extends UIComponent {
 
         ((AnchorPane)(parent)).getChildren().addAll(temp);
         ((AnchorPane)(parent)).getChildren().removeAll(visibleWeek);
+
+        // TODO: 4/29/18 animate text along with visibleWeek
         drawVisibleWeek(dir * scene.getHeight());
         ((AnchorPane)(parent)).getChildren().addAll(visibleWeek);
 
@@ -80,10 +83,24 @@ public class WeekView extends UIComponent {
     }
 
     private void showName() {
-//        TextFlow tf = new TextFlow();
         Text t = new Text();
         t.setText(currWeek.genName());
-        t.setFont(Font.loadFont("file:assets/fonts/Roboto_Bold.ttf", 1000));
+        t.setFont(Font.loadFont(WeekView.class.getResource("../assets/fonts/Roboto-Bold.ttf").toExternalForm(), 10));
+        t.setStyle("-fx-font-size:30;");
+        AnchorPane.setLeftAnchor(t,50.0);
+        AnchorPane.setTopAnchor(t,50.0);
         visibleWeek.getChildren().add(t);
+    }
+
+    private void showDays() {
+        for (int i=0; i < currWeek.getDays().size() - 1; i++) {
+            AnchorPane ap = new AnchorPane();
+            AnchorPane.setLeftAnchor(ap, margin);
+            AnchorPane.setRightAnchor(ap, margin);
+            AnchorPane.setTopAnchor(ap, (margin * i) + margin * 2 );
+            ap.setPrefHeight(margin * .7);
+            ap.setStyle("-fx-background-color: #f0f0f0");
+            visibleWeek.getChildren().add(ap);
+        }
     }
 }

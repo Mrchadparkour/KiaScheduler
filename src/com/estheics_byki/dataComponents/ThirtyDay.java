@@ -2,10 +2,7 @@ package com.estheics_byki.dataComponents;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
-import static com.estheics_byki.Utils.StrUtils.titleCase;
 
 public class ThirtyDay {
     private List<Week> weeks = new ArrayList<>();
@@ -42,7 +39,7 @@ public class ThirtyDay {
 
     public int moveWeek(int dir) {
     //if dir is positive increase week else go back
-        if (dir < 0 && currIdx < 3) {
+        if (dir < 0 && currIdx < weeks.size() - 1) {
             //animates down
             currIdx++;
             return 1;
