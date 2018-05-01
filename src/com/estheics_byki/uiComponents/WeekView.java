@@ -14,11 +14,12 @@ import javafx.scene.text.Text;
 
 public class WeekView extends UIComponent {
 
+    private Scene scene;
     private static AnchorPane visibleWeek;
     private static ThirtyDay thirtyDay = new ThirtyDay();
     private double y;
     private double margin;
-    private Scene scene;
+    private double bottomLim;
 
     public WeekView(Scene scene, Parent parent) {
         super(scene, parent);
@@ -40,6 +41,7 @@ public class WeekView extends UIComponent {
                 n.setLayoutY((i * margin * 1.2));
                 n.setLayoutX(scene.getWidth() / 4 + margin / 2);
             }
+            bottomLim = i * margin;
         }
     }
 
@@ -75,6 +77,7 @@ public class WeekView extends UIComponent {
                 i++;
             }
         }
+        bottomLim = i * margin;
     }
 
     private void dayInfo(Day d, AnchorPane p) {
@@ -89,13 +92,12 @@ public class WeekView extends UIComponent {
     public void initView() {
         //Scroll to change change week view
         parent.setOnScroll(event -> {
-            double dY = event.getDeltaY();
-//            if (this.y + dY > ) {
-//
-//            }
-            this.y += dY;
-            System.out.println(y);
-            visibleWeek.setLayoutY(y);
+            double newY = event.getDeltaY() + y;
+            if (newY < 40.0 && newY > -bottomLim + (margin * 3)) {
+                this.y = newY;
+                System.out.println(y);
+                visibleWeek.setLayoutY(y);
+            }
         });
 
         drawVWeek();
