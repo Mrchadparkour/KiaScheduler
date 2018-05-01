@@ -9,6 +9,7 @@ class strUtilsTest {
     @Test
     void testTitleCase() {
         Assertions.assertEquals("Monday", StrUtils.titleCase("MOnDay"));
+        Assertions.assertEquals("Monday", StrUtils.titleCase("monday"));
         Assertions.assertEquals("Tuesday", StrUtils.titleCase("tUesDay"));
         Assertions.assertEquals("March", StrUtils.titleCase("MArcH"));
         Assertions.assertEquals("Week 1", StrUtils.titleCase("wEEK 1"));

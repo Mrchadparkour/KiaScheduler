@@ -6,5 +6,5 @@
 
 #backdrop {
     /*-fx-background-image: url("../images/cherryBig.jpg");*/
-    -fx-background-color: #f2f2f2
+    -fx-background-color: linear-gradient(#a8c0ff 0%, #3f2b96 100%);
 }

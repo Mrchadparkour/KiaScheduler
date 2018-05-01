@@ -38,7 +38,7 @@ public class WeekView extends UIComponent {
                 n.setLayoutX(scene.getWidth() / 4);
                 n.setLayoutY((i * margin * 1.2) + margin / 2);
             } else {
-                ((AnchorPane) (n)).setPrefHeight(margin);
+                ((AnchorPane) (n)).setPrefHeight(margin * 2);
                 ((AnchorPane) (n)).setPrefWidth(scene.getWidth() - (scene.getWidth() / 4 + margin));
                 n.setLayoutY((i * margin * 1.2));
                 n.setLayoutX(scene.getWidth() / 4 + margin / 2);
@@ -60,21 +60,21 @@ public class WeekView extends UIComponent {
     private void drawVWeek() {
         int i = 0;
         visibleWeek = new AnchorPane();
-        DropShadow dropShadow = new DropShadow();
-        dropShadow.setRadius(10.0);
-        dropShadow.setOffsetX(3.0);
-        dropShadow.setOffsetY(3.0);
-        dropShadow.setColor(Color.color(0.5, 0.5, 0.5));
+//        DropShadow dropShadow = new DropShadow();
+//        dropShadow.setRadius(10.0);
+//        dropShadow.setOffsetX(3.0);
+//        dropShadow.setOffsetY(3.0);
+//        dropShadow.setColor(Color.color(0.5, 0.5, 0.5));
         for (Week w : thirtyDay.getWeeks()) {
             showName(w, (i * margin * 1.2) + margin / 1.5, new Text());
             i++;
             for (Day d : w.getDays()) {
                 AnchorPane pane = new AnchorPane();
-                pane.setPrefHeight(margin);
+                pane.setPrefHeight(margin * 2);
                 pane.setPrefWidth(scene.getWidth() - (scene.getWidth() / 4 + margin));
                 pane.setLayoutY((i * margin * 1.2));
-                pane.setEffect(dropShadow);
-                pane.setStyle("-fx-background-color: #FFFFFF;");
+//                pane.setEffect(dropShadow);
+                pane.setStyle("-fx-background-color:#171d22");
                 dayInfo(d, pane);
                 visibleWeek.getChildren().add(pane);
                 i++;
