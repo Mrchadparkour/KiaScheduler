@@ -20,13 +20,6 @@ public class ThirtyDay {
             }
             currWeek.add(new Day(day));
         }
-
-        for (Week w : weeks) {
-            System.out.println(w.genName());
-            for (Day d : w.getDays()) {
-                System.out.println( d.getWeekDay());
-            }
-        }
     }
 
     public List<Week> getWeeks() {

@@ -7,17 +7,18 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 abstract class UIComponent {
-    protected Scene scene;
-    protected Parent parent;
+    Scene scene;
+    Parent parent;
 
     abstract void initView();
+    abstract void handleResize();
 
-    protected UIComponent(Scene scene, Parent parent) {
+    UIComponent(Scene scene, Parent parent) {
         this.scene = scene;
         this.parent = parent;
     }
 
-    protected Node clone(Node node) {
+    Node clone(Node node) {
         AnchorPane pane = new AnchorPane();
         pane.setLayoutX(node.getLayoutX());
         pane.setLayoutY(node.getLayoutY());
