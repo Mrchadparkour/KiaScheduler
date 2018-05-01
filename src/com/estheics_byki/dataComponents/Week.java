@@ -20,10 +20,8 @@ public class Week {
         Month lm = days.get(days.size() - 1).getMonth();
         if (name == null) {
             //months are different but there are more days in first month -> last week of fm
-            if (!lm.equals(fm) && mostInMonth().equals(fm)) this.name = fName(3, fm);
-
-            //months are different but most days are in last month -> first week of lm
-            else if (!lm.equals(fm) && mostInMonth().equals(lm)) this.name = fName(0, lm);
+            if (!lm.equals(fm)) this.name = fName(3, fm) + fName(0, lm);
+            else if (days.size() < 4) this.name = days.get(0).getDayVal() < 27 ? "First days of " + titleCase(lm.toString()) : "Last days of " + titleCase(lm.toString());
             else {
                 // all days have the same month
                 int fDay = days.get(0).getDayVal();
@@ -42,6 +40,7 @@ public class Week {
                     }
                 }
             }
+
         }
         return name;
     }
