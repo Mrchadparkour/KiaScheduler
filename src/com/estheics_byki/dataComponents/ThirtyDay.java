@@ -6,7 +6,6 @@ import java.util.List;
 
 public class ThirtyDay {
     private List<Week> weeks = new ArrayList<>();
-    private int currIdx = 0;
 
     public ThirtyDay() {
         LocalDateTime today = LocalDateTime.now();
@@ -20,32 +19,12 @@ public class ThirtyDay {
             }
             currWeek.add(new Day(day));
         }
+        weeks.add(currWeek);
     }
 
     public List<Week> getWeeks() {
         return weeks;
     }
-
-    public Week getCurrWeek() {
-        return weeks.get(currIdx);
-    }
-
-    public int moveWeek(int dir) {
-    //if dir is positive increase week else go back
-        if (dir < 0 && currIdx < weeks.size() - 1) {
-            //animates down
-            currIdx++;
-            return 1;
-        } else if(currIdx > 0 && dir > 0) {
-            //animates up
-            currIdx--;
-            return -1;
-        } else {
-            //don't move
-            return 0;
-        }
-    }
-
 
     //For Testing only
     public ThirtyDay(LocalDateTime today) {

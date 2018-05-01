@@ -17,10 +17,13 @@ public class ThirtyDayTest {
     @Test
     void hasValidWeeks() {
         System.out.println("Checking if your thirtyDay has weeks with days in the right place...");
+        int i = 0;
         for (Week w : thirtyDay.getWeeks()) {
-            System.out.println(w.genName());
+//            System.out.println(w.genName());
             for (Day d : w.getDays()) {
-                System.out.println( d.getWeekDay());
+//                System.out.println( d.getWeekDay());
+                System.out.println(i);
+                i++;
             }
         }
 
@@ -32,36 +35,5 @@ public class ThirtyDayTest {
         Assertions.assertEquals("Last Week of May", weeks.get(4).genName());
 
 
-    }
-
-    @Test
-    void testMoveWeek() {
-        System.out.println("If 0 entered, return 0");
-        Assertions.assertEquals(0, thirtyDay.moveWeek(0));
-
-        System.out.println("Move forward");
-        Assertions.assertEquals(1, thirtyDay.moveWeek(-1));
-        //cause it to go out of bounds
-        System.out.println("Move forward");
-        thirtyDay.moveWeek(-1);
-        System.out.println("Move forward");
-        thirtyDay.moveWeek(-1);
-        System.out.println("Move forward");
-        thirtyDay.moveWeek(-1);
-        System.out.println("Checking for the out of bounds check...");
-        Assertions.assertEquals(0, thirtyDay.moveWeek(-1));
-        System.out.println("Can we move backward...");
-        Assertions.assertEquals(-1, thirtyDay.moveWeek(1));
-        System.out.println("Move backward");
-        thirtyDay.moveWeek(1);
-        System.out.println("Move backward");
-        thirtyDay.moveWeek(1);
-        System.out.println("Move backward");
-        thirtyDay.moveWeek(1);
-        System.out.println("Checking for the out of bounds check...");
-        //cause it to go out of bounds
-        Assertions.assertEquals(0, thirtyDay.moveWeek(1));
-
-        System.out.println("All clear!");
     }
 }

@@ -3,6 +3,7 @@ package com.estheics_byki.uiComponents;
 import com.estheics_byki.dataComponents.Day;
 import com.estheics_byki.dataComponents.ThirtyDay;
 import com.estheics_byki.dataComponents.Week;
+import javafx.animation.TranslateTransition;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,6 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 
 public class WeekView extends UIComponent {
 
@@ -41,7 +43,8 @@ public class WeekView extends UIComponent {
                 n.setLayoutY((i * margin * 1.2));
                 n.setLayoutX(scene.getWidth() / 4 + margin / 2);
             }
-            bottomLim = i * margin;
+            bottomLim = -1 * (i * margin) + 2 * margin;
+            animateToScrollBounds(y);
         }
     }
 
@@ -77,7 +80,7 @@ public class WeekView extends UIComponent {
                 i++;
             }
         }
-        bottomLim = i * margin;
+        bottomLim = -1 * (i * margin) + 2 * margin;
     }
 
     private void dayInfo(Day d, AnchorPane p) {
@@ -93,14 +96,27 @@ public class WeekView extends UIComponent {
         //Scroll to change change week view
         parent.setOnScroll(event -> {
             double newY = event.getDeltaY() + y;
-            if (newY < 40.0 && newY > -bottomLim + (margin * 3)) {
+            if (animateToScrollBounds(newY)) {
                 this.y = newY;
-                System.out.println(y);
                 visibleWeek.setLayoutY(y);
             }
         });
 
         drawVWeek();
         ((AnchorPane) (parent)).getChildren().addAll(visibleWeek);
+    }
+
+    private boolean animateToScrollBounds(double newY) {
+        if (!(newY < 80.0 && newY > bottomLim)) {
+            double safeY = newY > 0.0 ? -40.0 : 40;
+            TranslateTransition tt = new TranslateTransition(Duration.seconds(1), visibleWeek);
+            tt.setToY(safeY);
+            this.y += safeY;
+            tt.play();
+            return false;
+        }
+
+        return true;
+
     }
 }
