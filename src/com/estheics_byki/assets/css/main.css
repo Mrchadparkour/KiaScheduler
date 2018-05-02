@@ -19,3 +19,8 @@
     -fx-stroke: #55E4F1;
     -fx-stroke-width: 4;
 }
+
+#dayofweek {
+    -fx-font-size: 30px;
+    -fx-fill: linear-gradient(#a8c0ff 0%, #3f2b96 100%);
+}

@@ -7,9 +7,7 @@ import javafx.animation.TranslateTransition;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -77,17 +75,14 @@ public class WeekView extends UIComponent {
         visibleWeek.getChildren().add(t);
     }
 
-    private void blueBoxDate(AnchorPane dp, int dayNumber) {
+    private void blueDate(AnchorPane dp, int dayNumber) {
         Text t = new Text();
         t.setText(""+ dayNumber);
         t.setFont(myFont);
         t.setId("datenum");
-//        Pane bb = new Pane();
         AnchorPane.setRightAnchor(t,10.0);
         AnchorPane.setBottomAnchor(t, 0.0);
         AnchorPane.setTopAnchor(t,0.0);
-//        System.out.println(dp.getPrefWidth() / 2);
-//        bb.setPrefWidth(dayPaneWidth(margin()) / 10);
         dp.getChildren().add(t);
     }
 
@@ -111,12 +106,14 @@ public class WeekView extends UIComponent {
 
     private void dayInfo(Day d, AnchorPane p) {
         Text t = new Text();
-        t.setText(d.fDate());
+        t.setText(d.getWeekDay().substring(0, d.getWeekDay().length() - 3));
+        t.setFont(myFont);
+        t.setId("dayofweek");
         AnchorPane.setLeftAnchor(t, 5.0);
         AnchorPane.setTopAnchor(t, margin() /2);
         p.getChildren().add(t);
 
-        blueBoxDate(p, d.getDayVal());
+        blueDate(p, d.getDayVal());
     }
 
     @Override
