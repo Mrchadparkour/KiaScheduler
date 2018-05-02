@@ -21,7 +21,7 @@ public class Week {
         if (name == null) {
             //months are different but there are more days in first month -> last week of fm
             if (!lm.equals(fm)) this.name = fName(3, fm) + fName(0, lm);
-            else if (days.size() < 4) this.name = days.get(0).getDayVal() < 27 ? "First days of " + titleCase(lm.toString()) : "Last days of " + titleCase(lm.toString());
+            else if (days.size() < 4) this.name = days.get(0).getDayVal() < 27 ? "First Days of " + titleCase(lm.toString()) : "Last Days of " + titleCase(lm.toString());
             else {
                 // all days have the same month
                 int fDay = days.get(0).getDayVal();
